@@ -27,7 +27,12 @@ class App extends React.Component {
     let url = `https://us1.locationiq.com/v1/search?key=${process.env.REACT_APP_LOCATIONIQ_API_KEY}&q=${this.state.city}&format=json`;
    
     let cityData = await axios.get(url);
-    console.log(cityData);
+    let lat = console.log(cityData.data[0].lon);
+    let lon = console.log(cityData.data[0].lat);
+    console.log(lat);
+    console.log(lon);
+
+   
     // FOR YOUR LAB YOU WILL NEED TO GET A MAP IMAGE SRC. Example:
     // `https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_LOCATIONIQ_API_KEY}&center=47.6038321,-122.3300624&zoom=10`
         
