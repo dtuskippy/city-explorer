@@ -8,8 +8,8 @@ class App extends React.Component {
     this.state = {
       city: '',
       cityData: [],
-      error: false,
-      errorMessage: ''
+      // error: false,
+      // errorMessage: ''
   
     }
   }
