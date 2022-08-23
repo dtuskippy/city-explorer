@@ -27,10 +27,21 @@ class App extends React.Component {
     let url = `https://us1.locationiq.com/v1/search?key=${process.env.REACT_APP_LOCATIONIQ_API_KEY}&q=${this.state.city}&format=json`;
    
     let cityData = await axios.get(url);
-    let lat = console.log(cityData.data[0].lon);
-    let lon = console.log(cityData.data[0].lat);
-    console.log(lat);
-    console.log(lon);
+    
+    let lat = cityData.data[0].lat;
+    let lon = cityData.data[0].lon;
+    let coordinates = [];
+    coordinates.push(lat, lon);
+
+    let latLog = console.log(cityData.data[0].lat);
+    let lonLog = console.log(cityData.data[0].lon);
+    console.log(latLog);
+    console.log(lonLog);
+
+    this.setState({
+      cityData: coordinates
+      
+    });
 
    
     // FOR YOUR LAB YOU WILL NEED TO GET A MAP IMAGE SRC. Example:
@@ -51,7 +62,11 @@ class App extends React.Component {
       </form>
 
       {
-        <p>{this.state.city}</p>
+        <>
+          <p>{this.state.city}</p>
+          <p>{this.state.cityData}</p>
+         
+        </>
       }
 
         </>
