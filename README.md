@@ -27,3 +27,11 @@ Estimate of time needed to complete: _15 mins___
 Start time: _22:40____
 Finish time: __22:55___
 Actual time needed to complete: __15 mins___
+
+## Name of feature: _Set up your React repository & API keys_
+
+Estimate of time needed to complete: _30 mins___
+Start time: _23:00____
+Finish time: __23:55___
+Actual time needed to complete: __55 mins___
+
