@@ -3,6 +3,8 @@ import axios from 'axios';
 import "bootstrap/dist/css/bootstrap.min.css";
 import Form from "react-bootstrap/Form";
 import Button from 'react-bootstrap/Button'
+import Card from 'react-bootstrap/Card';
+import Alert from "react-bootstrap/Alert";
 import './app.css'
 
 
@@ -62,13 +64,7 @@ class App extends React.Component {
     return (
       <>
       
-      
-      {/* <form onSubmit={this.getCityData}>
-        <label> Pick a city!
-          <input type="text" onInput={this.handleInput}/>
-        </label>
-        <button type="submit">Explore!</button>
-      </form> */}
+     
       <Form id="form" onSubmit={this.getCityData}>
         <Form.Group>
            <Form.Label><h3>Pick a city!</h3></Form.Label>
@@ -78,18 +74,24 @@ class App extends React.Component {
       </Form>
     
       
-    {
-      this.state.showCity && 
+      {
+        this.state.showCity && 
 
-       <div>
-         <h2>{this.state.city} is a great choice!</h2>
-         <p>Latitude: {this.state.cityLat}</p>
-         <p>Longitude: {this.state.cityLon}</p>
-         <img src={`https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_LOCATIONIQ_API_KEY}&center=${this.state.cityLat},${this.state.cityLon}&zoom=${14}`} alt={this.state.city} width="300" />
-       </div>
-    }
+        <Card style={{ width: '22rem' }}>
+          <Card.Img variant="top" src={`https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_LOCATIONIQ_API_KEY}&center=${this.state.cityLat},${this.state.cityLon}&zoom=${14}`}/>
+          <Card.Body>
+            <Card.Title>{this.state.city} is a great choice!</Card.Title>
+            <Card.Text>
+              <p>Latitude: {this.state.cityLat}</p>
+              <p>Longitude: {this.state.cityLon}</p>
+            </Card.Text>
+          </Card.Body>
+        </Card>
+  
+      }
 
-    {
+
+      {
       this.state.weatherData.length > 0 && 
       
       <div>
