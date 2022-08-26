@@ -2,6 +2,8 @@ import React from 'react';
 import axios from 'axios';
 import "bootstrap/dist/css/bootstrap.min.css";
 import Form from "react-bootstrap/Form";
+import Button from 'react-bootstrap/Button'
+import './app.css'
 
 
 
@@ -61,13 +63,19 @@ class App extends React.Component {
       <>
       
       
-      <form onSubmit={this.getCityData}>
+      {/* <form onSubmit={this.getCityData}>
         <label> Pick a city!
           <input type="text" onInput={this.handleInput}/>
         </label>
         <button type="submit">Explore!</button>
-      </form>
-
+      </form> */}
+      <Form id="form" onSubmit={this.getCityData}>
+        <Form.Group>
+           <Form.Label><h3>Pick a city!</h3></Form.Label>
+           <Form.Control onChange={this.handleInput} type="text" placeholder="Enter city here"/>
+         </Form.Group>
+         <Button id="button" variant="outline-primary" type="submit">Explore!</Button>
+      </Form>
     
       
     {
