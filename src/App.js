@@ -18,7 +18,8 @@ class App extends React.Component {
       cityLat: '',
       cityLon: '',
       weatherData: {},
-      moviesData: []
+      moviesData: [],
+      showError: false
     }
   }
  
@@ -26,45 +27,49 @@ class App extends React.Component {
     e.preventDefault();
     this.setState({
       city: e.target.value
-      
     })
   }
-
+ 
+   
   getCityData = async (e) => {
     e.preventDefault();
        
     try {
-      let url = `https://us1.locationiq.com/v1/search?key=${process.env.REACT_APP_LOCATIONIQ_API_KEY}&q=${this.state.city}&format=json`;
-      let cityData = await axios.get(url);
-
-      let moviesUrl = `${process.env.REACT_APP_SERVER}/movies?city=${this.state.city}`
-      let moviesResponse = await axios.get(moviesUrl);
+      if(`${this.state.city}` === ''){
+        this.setState({
+          showError: true
+        })
+      } else {
+          let url = `https://us1.locationiq.com/v1/search?key=${process.env.REACT_APP_LOCATIONIQ_API_KEY}&q=${this.state.city}&format=json`;
+          let cityData = await axios.get(url);
+    
+          let moviesUrl = `${process.env.REACT_APP_SERVER}/movies?city=${this.state.city}`
+          let moviesResponse = await axios.get(moviesUrl);
+          
+          let lat = cityData.data[0].lat;
+          let lon = cityData.data[0].lon;
       
-      let lat = cityData.data[0].lat;
-      let lon = cityData.data[0].lon;
-  
-      let urlWeather = `${process.env.REACT_APP_SERVER}/weather?lat=${lat}&lon=${lon}`
-      let weatherResponse = await axios.get(urlWeather);
+          let urlWeather = `${process.env.REACT_APP_SERVER}/weather?lat=${lat}&lon=${lon}`
+          let weatherResponse = await axios.get(urlWeather);
 
-      this.setState({
-        showCity: true,
-        cityLat: lat,
-        cityLon: lon,
-        weatherData: weatherResponse.data,
-        moviesData: moviesResponse.data
-      });
+          this.setState({
+            showCity: true,
+            cityLat: lat,
+            cityLon: lon,
+            weatherData: weatherResponse.data,
+            moviesData: moviesResponse.data
+          });
+        }
     } catch (err) {
-      console.log(err);
-    }
-
+        console.log(err);
+      }
   }
 
-  render(){
-    console.log(this.state);
+  render() {
+        console.log(this.state);
     return (
       <>
-      
-     
+        
       <Form id="form" onSubmit={this.getCityData}>
         <Form.Group>
            <Form.Label><h3>Pick a city!</h3></Form.Label>
@@ -72,8 +77,7 @@ class App extends React.Component {
          </Form.Group>
          <Button id="button" variant="outline-primary" type="submit">Explore!</Button>
       </Form>
-    
-      
+          
       {
         this.state.showCity && 
 
@@ -90,47 +94,49 @@ class App extends React.Component {
   
       }
 
+      {
+        this.state.showError &&
+        <Alert variant="warning" style={{ width: "30rem" }}>
+          <Alert.Heading>
+            Please enter a city name
+          </Alert.Heading>
+        </Alert>
+      }
+
 
       {
-      this.state.weatherData.length > 0 && 
+        this.state.weatherData.length > 0 && 
+        
+        <div>
+          <h2>{this.state.city}'s Next 16 Day Weather Forecast</h2>
+          <ul>
+              {
+                this.state.weatherData.map((day, idx) =>
+                  <li key={idx}>{day.date}: {day.description}</li>
+                )
+              }
+          </ul>
+        </div>
+      }
       
-      <div>
-        <h2>{this.state.city}'s Next 16 Day Weather Forecast</h2>
-        <ul>
-            {
-              this.state.weatherData.map((day, idx) =>
-                <li key={idx}>{day.date}: {day.description}</li>
-              )
-            }
-        </ul>
-      </div>
-    }
-      
-    {
-      this.state.moviesData.length > 0 && 
-      
-      <div>
-        <h2>Top Movies Related to {this.state.city}</h2>
-        <ul>
-            {
-              this.state.moviesData.map((movie, idx) =>
-                <li key={idx}>{movie.date}</li>
-              )
-            }
-        </ul>
-      </div>
-    }
-   
-      
-
-
+      {
+        this.state.moviesData.length > 0 && 
+        
+        <div>
+          <h2>Top Movies Related to {this.state.city}</h2>
+          <ul>
+              {
+                this.state.moviesData.map((movie, idx) =>
+                  <li key={idx}>{movie.date}</li>
+                )
+              }
+          </ul>
+        </div>
+      }
 
     </>
-        
     );
   }
 }
-
-
 
 export default App;
