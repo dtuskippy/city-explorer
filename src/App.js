@@ -5,6 +5,7 @@ import Form from "react-bootstrap/Form";
 import Button from 'react-bootstrap/Button'
 import Card from 'react-bootstrap/Card';
 import Alert from "react-bootstrap/Alert";
+import ListGroup from 'react-bootstrap/ListGroup';
 import './app.css'
 
 
@@ -103,7 +104,7 @@ class App extends React.Component {
         </Alert>
       }
 
-
+{/* 
       {
         this.state.weatherData.length > 0 && 
         
@@ -117,6 +118,22 @@ class App extends React.Component {
               }
           </ul>
         </div>
+      } */}
+
+      {
+        this.state.weatherData.length > 0 && 
+        
+        <div>
+          <h2>{this.state.city}'s Next 16 Day Weather Forecast</h2>
+          <ListGroup as="ol" numbered style={{ width: "30rem" }}> 
+              {
+                this.state.weatherData.map((day, idx) =>
+                  <ListGroup.Item as="li" key={idx}>{day.description}</ListGroup.Item>
+                )
+              }
+          </ListGroup> 
+        </div>
+        
       }
       
       {
@@ -124,14 +141,15 @@ class App extends React.Component {
         
         <div>
           <h2>Top Movies Related to {this.state.city}</h2>
-          <ul>
+          <ListGroup as="ol" numbered style={{ width: "30rem" }}> 
               {
                 this.state.moviesData.map((movie, idx) =>
-                  <li key={idx}>{movie.date}</li>
+                  <ListGroup.Item as="li" key={idx}>{movie.date}</ListGroup.Item>
                 )
               }
-          </ul>
+          </ListGroup> 
         </div>
+        
       }
 
     </>
