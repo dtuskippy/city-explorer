@@ -20,18 +20,85 @@
 ## Credit and Collaborations
 <!-- Give credit (and a link) to other people or resources that helped you build this application. -->
 
+## Lab 06 - #2 Set up your React repository & API keys
 
-## Name of feature:  _WRRC Whiteboard_
+Estimate of time needed to complete: 30 mins
+Start time: 23:00 CET
+Finish time: 23:55 CET
+Actual time needed to complete: 55 mins
 
-Estimate of time needed to complete: _15 mins___
-Start time: _22:40____
-Finish time: __22:55___
-Actual time needed to complete: __15 mins___
+## Lab 06 - #2 Locations
 
-## Name of feature: _Set up your React repository & API keys_
+Estimate of time needed to complete: 3 hours
+Start time: 8:00 CET
+Finish time: 10:45 CET
+Actual time needed to complete: 2 hours, 45 mins
 
-Estimate of time needed to complete: _30 mins___
-Start time: _23:00____
-Finish time: __23:55___
-Actual time needed to complete: __55 mins___
+## Lab 06 - #3 Map
 
+Estimate of time needed to complete: 2 hours
+Start time: 11:00 CET
+Finish time: 13:30 CET
+Actual time needed to complete: 1 hour 30 mins
+
+## Lab 06 - #4 Errors
+
+Estimate of time needed to complete: 1 hour 30 mins
+Start time: 14:00 CET
+Finish time: 15:15
+Actual time needed to complete: 1 hour 15 mins
+
+ ![WRRC Lab 06](images/wrrc-lab-06.png)
+
+## Lab 07 - #1 Set ypu your server repository
+
+Estimate of time needed to complete: 2 hours
+Start time: 22:30 CET
+Finish time: 24:00 CET
+Actual time needed to complete: 1 hour 30 mins
+
+## Lab 07 - #2 Weather
+
+Estimate of time needed to complete: 4 hours
+Start time: 23:00 CET  
+Finish time: 03:00 CET
+Actual time needed to complete: 4 hours
+
+## Lab 07 - #3 Errors
+
+Estimate of time needed to complete: 1 hour
+Start time: 12:00 CET
+Finish time: 13:00 CET
+Actual time needed to complete: 1 hour
+
+![WRRC Lab 07](images/wrrc-lab-07.png)
+
+## 08 - #1 Weather
+
+Estimate of time needed to complete: 4 hours
+Start time: 23:00 CET / 8:30 CET
+Finish time: 03:00 CET / 11:30 CET
+Actual time needed to complete: 7 hours
+
+## 08 - #2 Movies
+
+Estimate of time needed to complete: 2 hours
+Start time: 9:00 CET 
+Finish time: 11:00 CET 
+Actual time needed to complete: 2 hours
+
+## 08 - #3
+
+Estimate of time needed to complete: 2 hours
+Start time: 9:00 CET 
+Finish time: 11:00 CET 
+Actual time needed to complete: 2 hours
+
+![WRRC Lab 08](images/wrrc-lab-08.png)
+
+
+
+
+
+## 09 - #1
+![WRRC Lab 09](images/wrrc-lab-09.png)
