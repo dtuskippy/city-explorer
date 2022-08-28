@@ -6,6 +6,8 @@ import Button from 'react-bootstrap/Button'
 import Card from 'react-bootstrap/Card';
 import Alert from "react-bootstrap/Alert";
 import './app.css'
+import Movies from './components/Movies.js';
+import Weather from './components/Weather.js';
 
 
 
@@ -91,9 +93,8 @@ class App extends React.Component {
             </Card.Text>
           </Card.Body>
         </Card>
-  
       }
-
+  
       {
         this.state.showError &&
         <Alert variant="warning" style={{ width: "30rem" }}>
@@ -103,38 +104,12 @@ class App extends React.Component {
         </Alert>
       }
 
+      <div>
+        <Movies moviesArray={this.state.moviesData}  moviesCity={this.state.city} />
+        <Weather weatherArray={this.state.weatherData}  weatherCity={this.state.city} />
+      </div>
 
-      {
-        this.state.weatherData.length > 0 && 
-        
-        <div>
-          <h2>{this.state.city}'s Next 16 Day Weather Forecast</h2>
-          <ul>
-              {
-                this.state.weatherData.map((day, idx) =>
-                  <li key={idx}>{day.date}: {day.description}</li>
-                )
-              }
-          </ul>
-        </div>
-      }
-      
-      {
-        this.state.moviesData.length > 0 && 
-        
-        <div>
-          <h2>Top Movies Related to {this.state.city}</h2>
-          <ul>
-              {
-                this.state.moviesData.map((movie, idx) =>
-                  <li key={idx}>{movie.date}</li>
-                )
-              }
-          </ul>
-        </div>
-      }
-
-    </>
+      </>
     );
   }
 }
