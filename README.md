@@ -18,7 +18,8 @@
 01-01-2001 4:59pm - Application now has a fully-functional express server, with a GET route for the location resource. -->
 
 ## Credit and Collaborations
-<!-- Give credit (and a link) to other people or resources that helped you build this application. -->
+
+Some minor trouble-shooting assistance from Stephen Clemmer and Audrey Patterson. 
 
 ## Lab 06 - #2 Set up your React repository & API keys
 
@@ -50,7 +51,7 @@ Actual time needed to complete: 1 hour 15 mins
 
  ![WRRC Lab 06](images/wrrc-lab-06.png)
 
-## Lab 07 - #1 Set ypu your server repository
+## Lab 07 - #1 Set up your server repository
 
 Estimate of time needed to complete: 2 hours
 Start time: 22:30 CET
@@ -96,9 +97,11 @@ Actual time needed to complete: 2 hours
 
 ![WRRC Lab 08](images/wrrc-lab-08.png)
 
+## 09 - #1 Refactor: Modularize the back-end codebase.
 
+Estimate of time needed to complete: 1 hour
+Start time: 22:00 CET
+Finish time: 22:30 CET
+Actual time needed to complete: 30 mins
 
-
-
-## 09 - #1
 ![WRRC Lab 09](images/wrrc-lab-09.png)
